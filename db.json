@@ -1,0 +1,39 @@
+{
+  "cars": [
+    {
+      "brand": "Porsche",
+      "name": "911 VIII (992)",
+      "price": 17000000,
+      "url": "https://jetcar24.ru/wp-content/uploads/2024/03/a71195a83947916337f3710c80a7ac4f-1024x768.jpg",
+      "id": "90a5"
+    },
+    {
+      "id": "d304",
+      "brand": "Porsche",
+      "name": "Taycan",
+      "price": "16790000",
+      "url": "https://jetcar24.ru/wp-content/uploads/2024/03/1b5dd997f553ce7ec9320458415fc33c-1024x768.jpg"
+    },
+    {
+      "id": "f5ae",
+      "brand": "Lamborghini",
+      "name": "Huracan",
+      "price": "52000000",
+      "url": "https://jetcar24.ru/wp-content/uploads/2024/04/d529adad6481b160d1a21560153ce24e-1024x768.jpg"
+    },
+    {
+      "id": "f180",
+      "brand": "HiPhi",
+      "name": "Z9",
+      "price": "13000000",
+      "url": "https://jetcar24.ru/wp-content/uploads/2023/12/04694454dddaded94de10605a9606699-1024x768.jpg"
+    },
+    {
+      "id": "c05f",
+      "brand": "Land Rover",
+      "name": "Range Rover V",
+      "price": "40000000",
+      "url": "https://jetcar24.ru/wp-content/uploads/2024/04/9434b665378305e9d038d22232500f66-1024x768.jpg"
+    }
+  ]
+}
