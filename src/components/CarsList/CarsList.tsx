@@ -6,7 +6,7 @@ import classes from "./CarsList.module.sass";
 
 const CarsList: FC = () => {
     // eslint-disable-next-line no-empty-pattern
-    const [createCar, {}] = carAPI.useCreateCarMutation()
+    // const [createCar, {}] = carAPI.useCreateCarMutation()
 
     const {data: cars} = carAPI.useFetchAllCarsQuery(50, {
         pollingInterval: 1000
@@ -16,14 +16,14 @@ const CarsList: FC = () => {
     // eslint-disable-next-line no-empty-pattern
     const [updateCar, {}] = carAPI.useUpdateCarMutation()
 
-    const handleCreate = async () => {
-        const brand = prompt('Brand')
-        const name = prompt('Name')
-        const price = prompt('price')
-        const url = prompt('url')
-
-        await createCar({brand, name, price, url} as unknown as ICar)
-    }
+    // const handleCreate = async () => {
+    //     const brand = prompt('Brand')
+    //     const name = prompt('Name')
+    //     const price = prompt('price')
+    //     const url = prompt('url')
+    //
+    //     await createCar({brand, name, price, url} as unknown as ICar)
+    // }
 
     const handleRemove = (car: ICar) => {
         // deleteCar(car);
