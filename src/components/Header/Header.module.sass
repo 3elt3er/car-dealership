@@ -8,10 +8,12 @@
   align-items: center
   background: #000000E6
   h1
+    cursor: pointer
     color: #fcaf3b
     font-size: 4rem
     font-weight: 600
 .name
+  margin: 0 650px
   flex: 1
   text-align: center
 
@@ -38,6 +40,7 @@
   z-index: 200
 
 .cartContent
+  position: relative
   background: #fff
   padding: 30px
   border-radius: 12px
@@ -55,19 +58,46 @@
   p
     color: #555
 
-  button
+
+.cartSum
+  margin-top: 20px
+  font-size: 1.2rem
+  font-weight: 600
+  color: #333
+  border-top: 1px solid #ddd
+  padding-top: 12px
+  text-align: right
+
+.clearButton
+  background: #fcaf3b
+  border: 1px solid #fcaf3b
+  padding: 10px 20px
+  border-radius: 6px
+  cursor: pointer
+  font-weight: 600
+  transition: all 0.2s ease
+  &:hover
     background: #fcaf3b
-    border: none
-    padding: 10px 20px
-    border-radius: 6px
-    cursor: pointer
-    font-weight: 600
-    transition: background 0.2s ease
-    &:hover
-      background: #d89e35
+    color: #000
 
 .closeButton
+  background: #e0e0e0
+  color: #000
+  border: none
+  padding: 10px 20px
+  border-radius: 6px
+  font-weight: 600
+  cursor: pointer
+  transition: background 0.2s ease
+  &:hover
+    background: #ccc
+
+
+.buttonsMenu
   margin-top: 15px
+  display: flex
+  gap: 10px
+  justify-content: center
 
 .cartItem
   display: flex
@@ -79,6 +109,7 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1)
   transition: transform 0.2s ease
   gap: 16px
+  cursor: pointer
   &:hover
     transform: scale(1.02)
 
@@ -111,14 +142,15 @@
   font-size: 1.2rem
 
 .cartItemRemove
-  background: none
+  background: #fcaf3b
   border: none
-  color: #000 // черная кнопка
-  font-size: 0.9rem
+  padding: 10px 20px
+  border-radius: 6px
   cursor: pointer
-  transition: color 0.2s ease
+  font-weight: 600
+  transition: background 0.2s ease
   &:hover
-    color: #333
+    background: #d89e35
 
 
 .cartItemNaming
@@ -130,3 +162,16 @@
   font-size: 20px
   font-weight: 600
   color: white
+
+.modalCloseIcon
+  position: absolute
+  top: 25px
+  right: 20px
+  border: none
+  cursor: pointer
+  color: #000
+  font-size: 1.2rem
+  transition: transform 0.2s ease, color 0.2s ease
+  &:hover
+    color: #fcaf3b
+    transform: scale(1.2)

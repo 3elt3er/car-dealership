@@ -5,8 +5,6 @@ import {FC} from "react";
 import classes from "./CarsList.module.sass";
 
 const CarsList: FC = () => {
-    // eslint-disable-next-line no-empty-pattern
-    // const [createCar, {}] = carAPI.useCreateCarMutation()
 
     const {data: cars} = carAPI.useFetchAllCarsQuery(50, {
         pollingInterval: 10000

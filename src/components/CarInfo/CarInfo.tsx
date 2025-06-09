@@ -1,9 +1,10 @@
-import {FC, useState} from "react";
+import {FC, useEffect, useState} from "react";
 import classes from "./CarInfo.module.sass";
 import {useParams} from "react-router-dom";
 import {carAPI} from "../../services/CarService.ts";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {addToCart} from "../../store/reducers/CartSlice.ts";
+import {RootState} from "../../store/store.ts";
 
 
 const CarInfo: FC = () => {
@@ -15,6 +16,19 @@ const CarInfo: FC = () => {
     const { data: car, isLoading, error } = carAPI.useFetchByCarIdQuery(id!, {
         skip: !id,
     })
+
+    const shopCartList = useSelector((state: RootState) => state.cart.items)
+
+    useEffect(() => {
+        if (car) {
+            if (shopCartList.find(item => item.id === car.id)) {
+                setIsButtonActive(false)
+            } else {
+                setIsButtonActive(true)
+            }
+        }
+    }, [car, shopCartList]);
+
 
     if (isLoading) return <div>Загрузка...</div>
     if (error || !car) return <div>Авто не найдено.</div>
@@ -51,7 +65,7 @@ const CarInfo: FC = () => {
                     <div>Трансмиссия: {car.transmission}</div>
                 </div>
 
-                <button className={isButtonActive ? classes.button : classes.buttonDisabled} onClick={addCarToCart}>Добавить в корзину</button>
+                <button className={isButtonActive ? classes.button : classes.buttonDisabled} onClick={addCarToCart}>{isButtonActive ? 'Добавить в корзину' : 'Уже в корзине'}</button>
             </div>
         </div>
 
