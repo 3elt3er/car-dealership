@@ -16,6 +16,10 @@ export const carAPI = createApi({
                 }
             }),
         }),
+        fetchByCarId: build.query<ICar, string>({
+            query: (id: string) => `/cars/${id}`,
+            providesTags: (_result, _error, id) => [{type: 'Car', id}],
+        }),
         createCar: build.mutation<ICar, ICar>({
             query: (car) => ({
                 url: `/cars`,

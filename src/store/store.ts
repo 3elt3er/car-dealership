@@ -1,10 +1,12 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import carReducer from './reducers/CarSlice'
+import cartReducer from './reducers/CartSlice'
 import {carAPI} from "../services/CarService.ts";
 
 
 const rootReducer = combineReducers({
     carReducer,
+    cart: cartReducer,
     [carAPI.reducerPath]: carAPI.reducer
 })
 

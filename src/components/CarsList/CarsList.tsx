@@ -9,7 +9,7 @@ const CarsList: FC = () => {
     // const [createCar, {}] = carAPI.useCreateCarMutation()
 
     const {data: cars} = carAPI.useFetchAllCarsQuery(50, {
-        pollingInterval: 1000
+        pollingInterval: 10000
     })
     // eslint-disable-next-line no-empty-pattern
     // const [deleteCar, {}] = carAPI.useDeleteCarMutation()

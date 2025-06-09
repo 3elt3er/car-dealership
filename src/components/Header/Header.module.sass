@@ -11,24 +11,122 @@
     color: #fcaf3b
     font-size: 4rem
     font-weight: 600
-  h4
-    color: whitesmoke
-    font-size: 1.4rem
-
-.contacts
-  display: flex
-  flex-direction: column
-  flex: 1
-  text-align: start
-  gap: 0.6vw
-
 .name
   flex: 1
   text-align: center
 
-.number
+.cartButton
+  background: none
+  border: none
+  color: #fcaf3b
+  cursor: pointer
+  margin-left: 20px
+  transition: transform 0.2s ease
+  &:hover
+    transform: scale(1.1)
+
+.cartModal
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background: rgba(0, 0, 0, 0.7)
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 200
+
+.cartContent
+  background: #fff
+  padding: 30px
+  border-radius: 12px
+  min-width: 300px
+  max-width: 600px
+  text-align: center
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3)
+
+  h2
+    font-size: 22px
+    font-weight: 600
+    margin-bottom: 15px
+    color: #000
+
+  p
+    color: #555
+
+  button
+    background: #fcaf3b
+    border: none
+    padding: 10px 20px
+    border-radius: 6px
+    cursor: pointer
+    font-weight: 600
+    transition: background 0.2s ease
+    &:hover
+      background: #d89e35
+
+.closeButton
+  margin-top: 15px
+
+.cartItem
+  display: flex
+  align-items: center
+  background: #f7f7f7
+  padding: 12px 16px
+  border-radius: 8px
+  margin-bottom: 10px
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1)
+  transition: transform 0.2s ease
+  gap: 16px
+  &:hover
+    transform: scale(1.02)
+
+.cartItemImage
+  width: 64px
+  height: 48px
+  object-fit: cover
+  border-radius: 6px
+  flex-shrink: 0
+
+.cartItemInfo
   display: flex
   flex-direction: column
   flex: 1
-  text-align: end
-  gap: 0.6vw
+
+.cartItemBrand
+  font-weight: 600
+  color: #333
+  font-size: 1.1rem
+
+.cartItemName
+  color: #666
+  font-size: 1rem
+
+.cartItemPrice
+  text-align: left
+  margin-top: 6px
+  font-weight: bold
+  color: #fcaf3b
+  font-size: 1.2rem
+
+.cartItemRemove
+  background: none
+  border: none
+  color: #000 // черная кнопка
+  font-size: 0.9rem
+  cursor: pointer
+  transition: color 0.2s ease
+  &:hover
+    color: #333
+
+
+.cartItemNaming
+  display: flex
+  gap: 10px
+
+.cartCounter
+  padding-bottom: 40px
+  font-size: 20px
+  font-weight: 600
+  color: white
