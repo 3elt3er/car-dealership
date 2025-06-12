@@ -25,7 +25,7 @@ const CarItem: FC<CarItemProps> = ({Car}) => {
             <img src={Car.url} alt='Автомобиль'/>
             <div className={classes.description}>
                 <h4>{Car.brand} {Car.name}</h4>
-                <div className={classes.price}>{Car.price} ₽</div>
+                <div className={classes.price}>{Car.price.toLocaleString()} ₽</div>
             </div>
             {/*<button >Delete</button>*/}
         </div>

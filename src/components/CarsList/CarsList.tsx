@@ -3,6 +3,7 @@ import {carAPI} from "../../services/CarService.ts";
 import {ICar} from "../../models/ICar.ts";
 import {FC} from "react";
 import classes from "./CarsList.module.sass";
+import {useNavigate} from "react-router-dom";
 
 const CarsList: FC = () => {
 
@@ -13,6 +14,8 @@ const CarsList: FC = () => {
     // const [deleteCar, {}] = carAPI.useDeleteCarMutation()
     // eslint-disable-next-line no-empty-pattern
     const [updateCar, {}] = carAPI.useUpdateCarMutation()
+
+    const navigate = useNavigate()
 
     // const handleCreate = async () => {
     //     const brand = prompt('Brand')
@@ -31,6 +34,11 @@ const CarsList: FC = () => {
     const handleUpdate = (car: ICar) => {
         updateCar(car)
     }
+
+    const openAddCarPage = () => {
+        navigate('/createCar')
+    }
+
     return (
         <>
             {/*<button onClick={() => handleCreate()}>Добавить машину</button>*/}
@@ -38,6 +46,7 @@ const CarsList: FC = () => {
                 {cars && cars.map(car =>
                     <CarItem Car={car} remove={handleRemove} update={handleUpdate} key={car.id}/>
                 )}
+                <button className={classes.addCar} onClick={() => openAddCarPage()}>Добавить машину на продажу ✚</button>
             </div>
         </>
 
